@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>场景一通行路过公共安全治理系统</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">场景一 · 通行路过</p>
+          <h1>开放通行公共安全治理系统</h1>
+        </div>
+        <div class="topbar-actions">
+          <label>
+            <span>时间窗</span>
+            <select id="hoursSelect">
+              <option value="6">近 6 小时</option>
+              <option value="12">近 12 小时</option>
+              <option value="24" selected>近 24 小时</option>
+              <option value="72">近 72 小时</option>
+            </select>
+          </label>
+          <label>
+            <span>片区</span>
+            <select id="zoneSelect">
+              <option value="">全部片区</option>
+            </select>
+          </label>
+          <button id="refreshBtn" type="button">刷新</button>
+          <button id="simulateBtn" class="primary" type="button">模拟接入</button>
+        </div>
+      </header>
+
+      <section class="kpi-grid" aria-label="核心指标">
+        <article class="kpi-card">
+          <span>总流量</span>
+          <strong id="kpiTotal">--</strong>
+          <small>人、车、物过留痕</small>
+        </article>
+        <article class="kpi-card">
+          <span>人过留脸</span>
+          <strong id="kpiPeople">--</strong>
+          <small>人脸/视频记录</small>
+        </article>
+        <article class="kpi-card">
+          <span>车过留牌</span>
+          <strong id="kpiVehicles">--</strong>
+          <small>车牌/视频记录</small>
+        </article>
+        <article class="kpi-card danger">
+          <span>打开预警</span>
+          <strong id="kpiAlerts">--</strong>
+          <small id="kpiHigh">高危 -- 条</small>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel trend-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">趋势分析</p>
+              <h2>通行流量按小时变化</h2>
+            </div>
+            <span id="lastUpdated" class="pill">--</span>
+          </div>
+          <div id="trendChart" class="chart"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">片区密度</p>
+              <h2>单点人数与容量负荷</h2>
+            </div>
+          </div>
+          <div id="zoneDensity" class="zone-list"></div>
+        </article>
+
+        <article class="panel alerts-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">风险预警</p>
+              <h2>在逃、毒驾、徘徊、跟踪、逆行</h2>
+            </div>
+          </div>
+          <div id="alertsList" class="alerts-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">对象频次</p>
+              <h2>同人同车高频通行</h2>
+            </div>
+          </div>
+          <div id="topTargets" class="target-list"></div>
+        </article>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">规则命中</p>
+              <h2>风险类型分布</h2>
+            </div>
+          </div>
+          <div id="ruleMix" class="rule-grid"></div>
+        </article>
+
+        <article class="panel event-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">实时流水</p>
+              <h2>视频、人脸、车牌、MAC、RFID 接入</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>时间</th>
+                  <th>类型</th>
+                  <th>片区</th>
+                  <th>对象</th>
+                  <th>方向/速度</th>
+                </tr>
+              </thead>
+              <tbody id="eventRows"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
