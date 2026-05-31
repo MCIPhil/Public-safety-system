@@ -1,3 +1,11 @@
+Copyright © 2026 MCIPhil ，Human-Intelligence-CN. All rights reserved.
+
+This repository, including all code, documentation, and related materials (collectively "the Work"), is private and protected by copyright law and international treaties.
+
+Unauthorized use, copying, modification, distribution, or creation of derivative works from this Work is strictly prohibited. No part of the Work may be reproduced, transmitted, or utilized in any form without explicit written permission from the copyright owner.
+
+For permission requests, contact: zqcllwldd@126.com
+
 # 开放通行公共安全治理系统
 
 本 demo 通行路过-道路、地铁/公交、开放广场/景区。系统覆盖视频、人脸、车牌、MAC、RFID 接入，并提供总人数、总流量、趋势分析、片区密度、在逃、毒驾、外来车、首次出现、网约车、电瓶车防盗、徘徊、跟踪、逆行、同人同车频次、超速等治理能力。
