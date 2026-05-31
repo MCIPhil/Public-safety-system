@@ -1,16 +1,8 @@
-# 场景一：开放通行公共安全治理系统
+# 开放通行公共安全治理系统
 
-本 demo 基于 `实验4 方案设计.pdf` 中的场景一：通行路过-道路、地铁/公交、开放广场/景区。系统覆盖视频、人脸、车牌、MAC、RFID 接入，并提供总人数、总流量、趋势分析、片区密度、在逃、毒驾、外来车、首次出现、网约车、电瓶车防盗、徘徊、跟踪、逆行、同人同车频次、超速等治理能力。
+本 demo 通行路过-道路、地铁/公交、开放广场/景区。系统覆盖视频、人脸、车牌、MAC、RFID 接入，并提供总人数、总流量、趋势分析、片区密度、在逃、毒驾、外来车、首次出现、网约车、电瓶车防盗、徘徊、跟踪、逆行、同人同车频次、超速等治理能力。
 
-## 运行环境
 
-使用你指定的 Anaconda 环境：
-
-```powershell
-D:\zzrj\anaconda\envs\math\python.exe --version
-```
-
-当前代码只依赖 `fastapi`、`uvicorn`、`pydantic`，这些包在 `math` 环境中已检测可用。
 
 ## 启动
 
@@ -23,7 +15,7 @@ D:\zzrj\anaconda\envs\math\python.exe --version
 也可以手动启动：
 
 ```powershell
-& "D:\zzrj\anaconda\envs\math\python.exe" -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+& python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
 打开浏览器访问：
